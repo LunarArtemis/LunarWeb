@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap');
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    a, *{
+      font-family: "Mitr", sans-serif;
+    }
+  </style>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
+
+</head>
+<body>
+
+  <!-- nav bar using tailwindcss style minimalist -->
+
+  <div class="bg-white shadow-md rounded-lg overflow-hidden">
+    <div class="flex justify-between items-center px-4 py-2">
+      <div class="flex items-center">
+        <img src="https://pic.onlinewebfonts.com/svg/img_142579.png" alt="logo" class="w-8 h-8">
+        <h1 class="ml-2 text-xl font-bold">Poonyakiat</h1>
+      </div>
+      <div class="flex items-center">
+        <a href="index.html" class="px-2 py-1 rounded-lg text-sm font-semibold text-gray-700 hover:text-gray-900  hover:bg-gray-100">Home</a>
+        <a href="resume.html" class="px-2 py-1 rounded-lg text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-gray-100">Resume</a>
+        <a href="contact.html" class="px-2 py-1 rounded-lg text-sm font-semibold text-gray-700 hover:text-gray-900 active: bg-gray-200 hover:bg-gray-100">Contact</a>
+      </div>
+    </div>
+  
+
+    
+                
+</body>
+</html>

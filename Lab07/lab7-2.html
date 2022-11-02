@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab7-2</title>
+    <!-- tailwind -->
+
+    <style>
+        .mt5 {
+            margin-top: 5rem;
+        }
+
+        .mb5 {
+            margin-bottom: 5rem;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- get XML file and show as table when click button -->
+    <H1>Get Data from XML</H1>
+    <button onclick="loadXMLDoc()" class="mb5" id="showBtn">Show XML</button>
+    <table id="myTable"></table>
+    <button onclick="next()" class="mt5" id="moreBtn">More</button>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        function loadXMLDoc() {
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    myFunction(this);
+                }
+            };
+            xmlhttp.open("GET", "cd_catalog.xml", true);
+            xmlhttp.send();
+        }
+
+        function colorTable() {
+            var table = document.getElementById("myTable");
+            var rows = table.getElementsByTagName("tr");
+            for (i = 0; i < rows.length; i++) {
+                if (i % 2 == 0) {
+                    // font white
+                    rows[i].style.color = "white";
+                    rows[i].style.backgroundColor = "#2522c7";
+                } else {
+                    rows[i].style.backgroundColor = "#c72253";
+                }
+            }
+        }
+
+        // show data as table
+        function myFunction(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table = "<tr><th>Artist</th><th>Title</th></tr>";
+            var x = xmlDoc.getElementsByTagName("CD");
+            for (i = 0; i < 6; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+            }
+            document.getElementById("myTable").innerHTML = table;
+            colorTable();
+        }
+
+        // show next 6 data until end of data
+        function next() {
+            var i;
+            var xmlDoc = xmlhttp.responseXML;
+            var table = "<tr><th>Artist</th><th>Title</th></tr>";
+            var x = xmlDoc.getElementsByTagName("CD");
+            for (i = 6; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+            }
+            document.getElementById("myTable").innerHTML = table;
+            colorTable();
+        }
+    </script>
+</body>
+</html>

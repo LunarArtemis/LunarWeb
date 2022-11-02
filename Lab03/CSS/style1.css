@@ -1,0 +1,47 @@
+body {
+  background-color: black;
+  color: white;
+}
+img {
+  padding: 5px;
+}
+.containCenter {
+  text-align: center;
+  align-items: center;
+}
+.header{
+  font-size: 80px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  word-spacing: 10px;
+}
+.imgCenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+.artist {
+  border: 10px solid rgb(255, 94, 0);
+}
+.spotlight {
+  margin-top: 10%;
+  border: 3px dotted cyan;
+  width: 300px;
+  text-align: center;
+  align-items: center;
+}
+a:link {
+  color: rgb(0, 255, 98);
+}
+
+a:visited {
+  color: rgb(255, 0, 212);
+}
+
+a:hover {
+  color: hotpink;
+}
+a:active {
+  color: rgb(0, 251, 255);
+}

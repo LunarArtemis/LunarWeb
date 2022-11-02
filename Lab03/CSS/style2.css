@@ -1,0 +1,14 @@
+body{
+    background-color: darkcyan;
+}
+label.description{
+    color: blue;
+}
+::placeholder{
+    color: gray;
+    font-style: italic;
+}
+.itemCenter{
+    text-align: center;
+    align-items: center;
+}

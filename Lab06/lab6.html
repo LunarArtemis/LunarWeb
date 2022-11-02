@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab6 Homepage</title>
+    <!-- css -->
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.2/dist/flowbite.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    
+    <!-- jquery mobile -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"/>
+
+
+</head>
+
+<body class="bg-gray-900">
+    <!-- the home page: -->
+    <div data-role="page" id="home" class="flex justify-center items-center text-center pt-4">
+        <!-- home page header: -->
+        <div data-role="header">
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl text-white">
+                Lab 6 Homepage</h1>
+            <div>
+                <nav>
+                    <div class="py-3 px-4 mx-auto max-w-screen-xl md:px-6">
+                        <div class="flex items-center justify-center">
+                            <ul class="flex flex-row mt-0 mr-6 space-x-8 text-sm font-medium">
+                                <li>
+                                    <a href="#home" class=" text-sky-500 font-bold hover:underline"
+                                        aria-current="page">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- home page content: -->
+        <div data-role="content" class="flex justify-center items-center pt-10 pb-10">
+            <ul
+                class="w-48 text-sm font-medium  rounded-lg border place-item-center bg-gray-700 border-gray-600 text-white">
+                <li class="py-2 px-4 w-full border-b  border-gray-600 text-white"><a
+                        class="dropdown-item" target="_blank" href="lab6_01.html">Lab6-1</a></li>
+                <li class="py-2 px-4 w-full border-b  border-gray-600 text-white"><a
+                        class="dropdown-item" target="_blank" href="lab6_02.html">Lab6-2</a></li>
+                <li class="py-2 px-4 w-full border-b border-gray-600 text-white"><a
+                        class="dropdown-item" target="_blank" href="lab6_03.html">Lab6-3</a></li>
+                <li class="py-2 px-4 w-full border-b border-gray-600 text-white"><a
+                        class="dropdown-item" target="_blank" href="lab6_04.html">Lab6-4</a></li>
+                <li class="py-2 px-4 w-full border-b  border-gray-600 text-white"><a
+                        class="dropdown-item" target="_blank" href="lab6_05.html">Lab6-5</a></li>
+                <li class="py-2 px-4 w-full border-b  border-gray-600 text-white"><a
+                        class="dropdown-item" target="_blank" href="lab6_06.html">Lab6-6</a></li>
+            </ul>
+        </div>
+        <p class="pt-5 pb-3 text-center orientation text-white"></p>
+    </div>
+
+    <footer
+        class="fixed bottom-0 left-0 z-20 p-4 w-full border-t shadow md:flex md:items-center md:justify-between md:p-6 bg-gray-800 border-gray-600">
+        <div data-role="footer">
+            <span class="block text-sm  sm:text-center text-gray-400">© 2022
+                <a href="https://lunarartemis.onuniverse.com/" class="hover:underline">Lunar Artemis™</a>. All
+                Rights
+                Reserved.
+            </span>
+        </div>
+    </footer>
+    <script>
+        //handler for orientation-change event:
+        $(window).on('orientationchange', function (event) {
+            //on orientation change, set content of div with appropriate text:
+            $('.orientation').html('You are in <em>' + event.orientation + '</em> mode.');
+        });
+        //call event handler when page first loads, to set orientation message:
+        $(window).orientationchange();
+    </script>
+</body>
+</html>
