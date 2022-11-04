@@ -17,6 +17,6 @@
     }
     else
     {
-        echo "Connected successfully";
+        echo("<script>console.log('Connected successfully');</script>");
     }
 ?>
